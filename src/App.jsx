@@ -50,7 +50,9 @@ const App = () => {
         <h1>Phonebook</h1>
         <ContactForm onAddContact={handleAddContact} />
         <h2>Contacts</h2>
-        <Filter value={filter} onChange={handleFilterChange} />
+      <Filter value={filter} onChange={handleFilterChange} />
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Error: { error }</p>}
         <ContactList
           contacts={filteredContacts}
           onDeleteContact={handleDeleteContact}
